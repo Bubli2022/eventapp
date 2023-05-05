@@ -1,9 +1,9 @@
-const Admin = require("../models/admin")
+const models = require("../models")
 
 class AdminServices {
    static async create(user) {
       try {
-         const result = await Admin.create(user)
+         const result = await models.admin.create(user)
          return result
       } catch (error) {
          throw error
@@ -12,7 +12,7 @@ class AdminServices {
 
    static async delete(id) {
       try {
-         const result = await Admin.destroy({ where: { id } })
+         const result = await models.admin.destroy({ where: { id } })
          return result
       } catch (error) {
          throw error

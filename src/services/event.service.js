@@ -1,9 +1,9 @@
-const Event = require("../models/event")
+const models = require("../models")
 
 class EventServices {
    static async getAll() {
       try {
-         const result = await Event.findAll()
+         const result = await models.event.findAll()
          return result
       } catch (error) {
          throw error
@@ -12,7 +12,7 @@ class EventServices {
 
    static async getById(id) {
       try {
-         const result = await Event.findByPk(id)
+         const result = await models.event.findByPk(id)
          return result
       } catch (error) {
          throw error
@@ -21,7 +21,7 @@ class EventServices {
 
    static async create(event) {
       try {
-         const result = await Event.create(event)
+         const result = await models.event.create(event)
          return result
       } catch (error) {
          throw error
@@ -30,7 +30,7 @@ class EventServices {
 
    static async update(id, field) {
       try {
-         const result = await Event.update(field, { where: { id } })
+         const result = await models.event.update(field, { where: { id } })
          return result
       } catch (error) {
          throw error
@@ -39,7 +39,7 @@ class EventServices {
 
    static async delete(id) {
       try {
-         const result = await Event.destroy({ where: { id } })
+         const result = await models.event.destroy({ where: { id } })
          return result
       } catch (error) {
          throw error

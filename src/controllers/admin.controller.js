@@ -10,7 +10,7 @@ const createAdmin = async (req, res) => {
    }
 }
 
-const deleteAdmin = (res) => {
+const deleteAdmin = (_, res) => {
    res.json({ message: "eliminando un admin" })
 }
 

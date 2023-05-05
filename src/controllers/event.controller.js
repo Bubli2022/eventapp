@@ -1,6 +1,6 @@
 const EventServices = require("../services/event.service")
 
-const getAllEvent = async (res) => {
+const getAllEvent = async (_, res) => {
    try {
       const result = await EventServices.getAll()
       res.json(result)

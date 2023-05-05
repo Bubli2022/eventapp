@@ -41,8 +41,18 @@ const router = Router()
  *                   items:
  *                     $ref: "#/components/schemas/request_event"
  *   get:
- *     summary: See all event
+ *     security:
+ *       - bearerAuth: []
+ *     summary: See all event in the app
  *     tags: [Event]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *         description: event Id
  *     responses:
  *       200:
  *         description: Data displayed successfully
