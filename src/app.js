@@ -12,7 +12,7 @@ app.use(morgan("tiny"))
 
 routerApi(app)
 
-db.sync({ force: false }) //devuelve una promesa
+db.sync({ alter: true }) //devuelve una promesa
    .then(() => console.log("Base de datos sincronizada"))
    .catch((error) => console.log(error))
 
