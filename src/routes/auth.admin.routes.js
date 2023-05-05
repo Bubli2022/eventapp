@@ -1,16 +1,16 @@
 const { Router } = require("express")
-const { register, login } = require("../controllers/auth.controller")
+const { register, login } = require("../controllers/auth.admin.controller")
 
 const router = Router()
 
 /**
  * @openapi
- * /api/v1/auth/register:
+ * /api/v1/auth.admin/register:
  *   post:
- *     summary: create a new user into application
- *     tags: [Auth]
+ *     summary: create a new admin into application
+ *     tags: [Auth admin]
  *     requestBody:
- *       description: Required fields to create a new user
+ *       description: Required fields to create a new admin
  *       required: true
  *       content:
  *         application/json:
@@ -26,7 +26,7 @@ const router = Router()
  *               properties:
  *                 message:
  *                   type: string
- *                   example: user created
+ *                   example: admin created
  *       400:
  *         description: Validation error
  *         content:
@@ -37,12 +37,12 @@ const router = Router()
  *                 message:
  *                   type: string
  *                   example: validation error
- * /api/v1/auth/login:
+ * /api/v1/auth.admin/login:
  *   post:
- *     summary: Login an existing user into the app
- *     tags: [Auth]
+ *     summary: Login an existing admin into the app
+ *     tags: [Auth admin]
  *     requestBody:
- *       description: Required fields to login a existing user
+ *       description: Required fields to login a existing admin
  *       required: true
  *       content:
  *         application/json:
@@ -64,7 +64,7 @@ const router = Router()
  *               properties:
  *                 message:
  *                   type: string
- *                   example: user not found / something wrong / not password or email provided
+ *                   example: admin not found / something wrong / not password or email provided
  */
 
 router.post("/register", register)

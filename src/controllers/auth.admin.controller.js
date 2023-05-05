@@ -1,13 +1,13 @@
-const AuthServices = require("../services/auth.services")
+const AuthAdminServices = require("../services/auth.admin.services")
 const transporter = require("../utils/mailer")
 
 const register = async (req, res) => {
    try {
-      const user = req.body
-      const result = await AuthServices.register(user)
+      const admin = req.body
+      const result = await AuthAdminServices.register(admin)
 
       if (result) {
-         res.status(201).json({ message: "user created" })
+         res.status(201).json({ message: "admin created" })
          await transporter.sendMail({
             to: result.email,
             from: "bublicius2010@gmail.com",
@@ -37,15 +37,15 @@ const login = async (req, res) => {
             message: " Not email or password provided",
          })
       }
-      const result = await AuthServices.login({ email, password })
+      const result = await AuthAdminServices.login({ email, password })
       if (result.isValid) {
-         const { username, id, email } = result.user
-         const userData = { username, id, email }
-         const token = AuthServices.genToken(userData)
-         userData.token = token
-         res.json(userData)
+         const { username, id, email } = result.admin
+         const adminData = { username, id, email }
+         const token = AuthAdminServices.genToken(adminData)
+         adminData.token = token
+         res.json(adminData)
       } else {
-         res.status(400).json({ message: "User noy found" })
+         res.status(400).json({ message: "admin noy found" })
       }
    } catch (error) {
       res.status(400).json({ message: "Something wrong" })

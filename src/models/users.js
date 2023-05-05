@@ -4,6 +4,66 @@ module.exports = (sequelize, DataTypes) => {
    return users.init(sequelize, DataTypes)
 }
 
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     users:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         username:
+ *           type: string
+ *           example: Ariel Marcos
+ *         email:
+ *           type: string
+ *           example: arielMarcos@gmail.com
+ *     register:
+ *       type: object
+ *       properties:
+ *         username:
+ *           type: string
+ *           example: Ariel Marcos
+ *         email:
+ *           type: string
+ *           example:  arielMarcos@gmail.com
+ *         password:
+ *           type: string
+ *           example: 1234
+ *     login:
+ *       type: object
+ *       properties:
+ *         email:
+ *           type: string
+ *           example:  arielMarcos@gmail.com
+ *         password:
+ *           type: string
+ *           example: 1234
+ *     request_auth:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: number
+ *           example: 1
+ *         username:
+ *           type: string
+ *           example: Ariel
+ *         email:
+ *           type: string
+ *           example:  arielMarcos@gmail.com
+ *         token:
+ *           type: string
+ *           example: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impvc2VkYW5pZWxAZ21haWwuY29tIiwiaWQiOjQsImlhdCI6"
+ *     request_logout:
+ *       type: object
+ *       properties:
+ *         message:
+ *           type: string
+ *           example: Usuario eliminado con exito
+ */
+
 class users extends Sequelize.Model {
    static init(sequelize, DataTypes) {
       return super.init(
