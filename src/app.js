@@ -1,5 +1,5 @@
-const db = require("./utils/database")
 const express = require("express")
+const db = require("./utils/database")
 const cors = require("cors")
 const morgan = require("morgan")
 const routerApi = require("./routes")

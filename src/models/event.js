@@ -85,6 +85,12 @@ module.exports = (sequelize, DataTypes) => {
  *         complete:
  *           type: boolean
  *           example: false
+ *         admin_id:
+ *           type: number
+ *           example: 2
+ *         user_id:
+ *           type: number
+ *           example: 1
  *     request_event_delete:
  *       type: object
  *       properties:
