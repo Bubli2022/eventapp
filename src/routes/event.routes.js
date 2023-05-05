@@ -68,10 +68,11 @@ const router = Router()
  *                   type: array
  *                   items:
  *                     $ref: "#/components/schemas/request_event"
+ * /api/v1/event/{id}:
  *   delete:
  *     security:
  *       - bearerAuth: []
- *     summary: See the data of a cart in the app
+ *     summary: Delete event from the app
  *     tags: [Event]
  *     parameters:
  *       - in: path
@@ -83,7 +84,7 @@ const router = Router()
  *         description: event Id
  *     responses:
  *       200:
- *         description: Data displayed successfully
+ *         description: Data deleted successfully
  *         content:
  *           application/json:
  *             schema:
