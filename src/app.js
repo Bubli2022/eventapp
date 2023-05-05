@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
    res.status(200).json({
       status: "Respuesta exitosa",
       description:
-         "Prueba esta API con SWAGGER en el siguiente enlace https://ecommerce-perezariel.up.railway.app/api/v1/docs/",
+         "Prueba esta API con SWAGGER en el siguiente enlace eventapp-production-perez-ariel.up.railwayy.app/api/v1/docs/",
       link: process.env.HOST,
    })
 })
