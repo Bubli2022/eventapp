@@ -1,4 +1,5 @@
 const EventServices = require("../services/event.service")
+// const { Evento } = require("../models")
 
 const getAllEvent = async (_, res) => {
    try {
@@ -9,13 +10,20 @@ const getAllEvent = async (_, res) => {
    }
 }
 
-const getEventById = async (req, res) => {
+const getEventByDate = async (req, res) => {
+   const { fechaInicio, fechaFin } = req.params
    try {
-      const { id } = req.params
-      const result = await EventServices.getById(id)
+      const result = await EventServices.findAll({
+         where: {
+            Date: {
+               [Op.between]: [fechaInicio, fechaFin],
+            },
+         },
+      })
+
       res.json(result)
    } catch (error) {
-      res.status(400).json(error.message)
+      res.status(500).json({ mensaje: "Hubo un error al obtener los eventos." })
    }
 }
 
@@ -44,7 +52,7 @@ const deleteEvent = async (req, res) => {
    try {
       const { id } = req.params
       const result = await EventServices.delete(id)
-      res.json(result)
+      res.json({ message: "event deleted" })
    } catch (error) {
       res.status(400).json(error.message)
    }
@@ -52,7 +60,7 @@ const deleteEvent = async (req, res) => {
 
 module.exports = {
    getAllEvent,
-   getEventById,
+   getEventByDate,
    createEvent,
    updateEvent,
    deleteEvent,

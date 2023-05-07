@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
  *         longDescription:
  *           type: string
  *           example: This event is a beautiful moment to your life
- *         date:
+ *         Date:
  *           type: date
  *           example: 2023-06-12
  *         hour:
@@ -61,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
  *         longDescription:
  *           type: string
  *           example: This event is a beautiful moment to your life
- *         date:
+ *         Date:
  *           type: date
  *           example: 2023-06-12
  *         hour:

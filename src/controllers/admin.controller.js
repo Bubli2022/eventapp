@@ -10,8 +10,14 @@ const createAdmin = async (req, res) => {
    }
 }
 
-const deleteAdmin = (_, res) => {
-   res.json({ message: "eliminando un admin" })
+const deleteAdmin = async (req, res) => {
+   try {
+      const { id } = req.params
+      const result = await AdminServices.delete(id)
+      res.json({ message: "admin deleted" })
+   } catch (error) {
+      res.status(400).json(error.message)
+   }
 }
 
 module.exports = {

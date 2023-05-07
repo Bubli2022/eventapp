@@ -2,8 +2,6 @@ const { Router } = require("express")
 
 const { createUser, deleteUser } = require("../controllers/users.controller")
 
-const authMiddleware = require("../middlewares/auth.middleware")
-
 const router = Router()
 /**
  * @openapi
@@ -37,7 +35,7 @@ const router = Router()
  *   delete:
  *     security:
  *       - bearerAuth: []
- *     summary: deleted data of users
+ *     summary: Deleted data of users
  *     tags: [Users]
  *     parameters:
  *       - in: path
@@ -65,6 +63,6 @@ const router = Router()
  */
 
 router.post("/users", createUser)
-router.delete("/users/:id", authMiddleware, deleteUser)
+router.delete("/users/:id", deleteUser)
 
 module.exports = router

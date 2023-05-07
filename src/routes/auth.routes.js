@@ -8,7 +8,7 @@ const router = Router()
  * /api/v1/auth/register:
  *   post:
  *     summary: create a new user into application
- *     tags: [Auth]
+ *     tags: [Auth user]
  *     requestBody:
  *       description: Required fields to create a new user
  *       required: true
@@ -40,7 +40,7 @@ const router = Router()
  * /api/v1/auth/login:
  *   post:
  *     summary: Login an existing user into the app
- *     tags: [Auth]
+ *     tags: [Auth user]
  *     requestBody:
  *       description: Required fields to login a existing user
  *       required: true

@@ -1,13 +1,14 @@
 const { Router } = require("express")
+
 const {
    getAllEvent,
-   getEventById,
+   getEventByDate,
    createEvent,
    updateEvent,
    deleteEvent,
 } = require("../controllers/event.controller")
 
-const authMiddleware = require("../middlewares/auth.middleware")
+const authAdminMiddleware = require("../middlewares/auth.middleware")
 
 const router = Router()
 /**
@@ -101,12 +102,12 @@ const router = Router()
 
 router.get("/event", getAllEvent)
 
-router.get("/event/:id", getEventById)
+router.get("/event/:fechaInicio/:fechaFin", getEventByDate)
 
-router.post("/event", authMiddleware, createEvent)
+router.post("/event", authAdminMiddleware, createEvent)
 
-router.put("/event/:id", authMiddleware, updateEvent)
+router.put("/event/:id", authAdminMiddleware, updateEvent)
 
-router.delete("/event/:id", authMiddleware, deleteEvent)
+router.delete("/event/:id", authAdminMiddleware, deleteEvent)
 
 module.exports = router

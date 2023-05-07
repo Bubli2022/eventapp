@@ -54,8 +54,6 @@ module.exports = (sequelize, DataTypes) => {
  *           type: string
  *           example:  arielMarcos@gmail.com
  *         token:
- *           type: string
- *           example: "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impvc2VkYW5pZWxAZ21haWwuY29tIiwiaWQiOjQsImlhdCI6"
  *     request_logout:
  *       type: object
  *       properties:

@@ -1,4 +1,5 @@
 const models = require("../models")
+// const { Evento } = require("../models")
 
 class EventServices {
    static async getAll() {
@@ -10,12 +11,20 @@ class EventServices {
       }
    }
 
-   static async getById(id) {
+   static async getEventByDate(fechaInicio, fechaFin) {
       try {
-         const result = await models.event.findByPk(id)
+         const result = await models.event.findAll({
+            where: {
+               Date: {
+                  [Op.between]: [fechaInicio, fechaFin],
+               },
+            },
+         })
+
          return result
       } catch (error) {
-         throw error
+         console.log(error)
+         throw new Error("Hubo un error al obtener los eventos.")
       }
    }
 

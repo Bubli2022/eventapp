@@ -3,7 +3,7 @@
 3. Instalat dependencias de desarrollo de nodemon morgan
 4. Crear estructuras de carpetas
    /src
-   /serices
+   /services
    /models
    /controllers
    /routes
@@ -25,4 +25,4 @@
 12.   Registrar usuarios => es la creación de usuarios
       "1234 => encriptar la contraseña
       bcrypt
-13.   contraseña de nodeapp skeleton: qmjjduoitrhazrbt
+13.   contraseña de nodeapp skeleton:

@@ -1,5 +1,5 @@
 const express = require("express")
-const db = require("./utils/database")
+// const db = require("./utils/database")
 const cors = require("cors")
 const morgan = require("morgan")
 const routerApi = require("./routes")
@@ -12,9 +12,9 @@ app.use(morgan("tiny"))
 
 routerApi(app)
 
-db.sync({ alter: true }) //devuelve una promesa
-   .then(() => console.log("Base de datos sincronizada"))
-   .catch((error) => console.log(error))
+// db.sync({ alter: true }) //devuelve una promesa
+//    .then(() => console.log("Base de datos sincronizada"))
+//    .catch((error) => console.log(error))
 
 app.get("/", (req, res) => {
    res.status(200).json({
