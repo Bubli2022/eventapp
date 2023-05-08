@@ -11,13 +11,11 @@ class EventServices {
       }
    }
 
-   static async getEventByDate(fechaInicio, fechaFin) {
+   static async getEventByDate(Date) {
       try {
          const result = await models.event.findAll({
             where: {
-               Date: {
-                  [Op.between]: [fechaInicio, fechaFin],
-               },
+               Date,
             },
          })
 

@@ -11,13 +11,11 @@ const getAllEvent = async (_, res) => {
 }
 
 const getEventByDate = async (req, res) => {
-   const { fechaInicio, fechaFin } = req.params
+   const { Date } = req.params
    try {
       const result = await EventServices.findAll({
          where: {
-            Date: {
-               [Op.between]: [fechaInicio, fechaFin],
-            },
+            Date,
          },
       })
 

@@ -102,7 +102,7 @@ const router = Router()
 
 router.get("/event", getAllEvent)
 
-router.get("/event/:fechaInicio/:fechaFin", getEventByDate)
+router.get("/event/:date", getEventByDate)
 
 router.post("/event", authAdminMiddleware, createEvent)
 

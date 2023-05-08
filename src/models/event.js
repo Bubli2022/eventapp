@@ -19,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
  *         longDescription:
  *           type: string
  *           example: This event is a beautiful moment to your life
- *         Date:
+ *         date:
  *           type: date
  *           example: 2023-06-12
  *         hour:
  *           type: number
- *           example: 15
+ *           example: 15:00
  *         organizer:
  *           type: string
  *           example: Ariel Marcos
@@ -61,12 +61,12 @@ module.exports = (sequelize, DataTypes) => {
  *         longDescription:
  *           type: string
  *           example: This event is a beautiful moment to your life
- *         Date:
+ *         date:
  *           type: date
  *           example: 2023-06-12
  *         hour:
  *           type: number
- *           example: 15
+ *           example: 15:00
  *         organizer:
  *           type: string
  *           example: Ariel Marcos
@@ -127,12 +127,12 @@ class event extends Sequelize.Model {
                type: DataTypes.STRING,
                allowNull: true,
             },
-            Date: {
+            date: {
                type: DataTypes.DATEONLY,
                allowNull: true,
             },
             hour: {
-               type: DataTypes.INTEGER,
+               type: DataTypes.TIME,
                allowNull: true,
             },
             organizer: {
